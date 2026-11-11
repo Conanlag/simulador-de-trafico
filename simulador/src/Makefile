@@ -1,38 +1,31 @@
 CXX      = g++
-INC_DIR  = ../Include
-BUILD    = build
 TARGET   = calles
-
-SRCS     = $(shell find . -name '*.cpp' -not -path './$(BUILD)/*')
-OBJS     = $(SRCS:./%.cpp=$(BUILD)/%.o)
-DEPS     = $(OBJS:.o=.d)
-INCLUDES = $(addprefix -I,$(shell find $(INC_DIR) -type d))
-
-CXXFLAGS = -std=c++17 -Wall -Wextra -O2 -MMD -MP $(INCLUDES)
-
-# En Windows el ejecutable termina en .exe
-ifeq ($(OS),Windows_NT)
-    TARGET = calles.exe
-endif
-
+ 
+SRC      = $(shell find . -type f -name '*.cpp')
+HEADERS  = $(shell find ../Include -type f -name '*.h')
+INCLUDES = $(addprefix -I,$(shell find ../Include -type d))
+ 
+CXXFLAGS = -Wall -Wextra -std=c++17 -O2 -fopenmp $(INCLUDES)
+ 
+INSTALL_DIR = $(HOME)/.local/bin
+ 
 all: $(TARGET)
-
-# make install hace lo mismo que make: compila el programa
-install: all
-
-$(TARGET): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $@ $^
-
-$(BUILD)/%.o: %.cpp
-	@mkdir -p $(dir $@)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
-
-run: all
+ 
+# Depende tambien de los .h: si cambias una cabecera, se vuelve a compilar
+$(TARGET): $(SRC) $(HEADERS)
+	$(CXX) $(CXXFLAGS) $(SRC) -pthread -o $(TARGET)
+ 
+run: $(TARGET)
 	./$(TARGET)
-
+ 
 clean:
-	rm -rf $(BUILD) $(TARGET)
-
-.PHONY: all install run clean
-
--include $(DEPS)
+	rm -f $(TARGET)
+ 
+install: $(TARGET)
+	mkdir -p $(INSTALL_DIR)
+	cp $(TARGET) $(INSTALL_DIR)/$(TARGET)
+ 
+uninstall:
+	rm -f $(INSTALL_DIR)/$(TARGET)
+ 
+.PHONY: all run clean install uninstall
