@@ -1,0 +1,6 @@
+Fecha de referencia: 2026-11-18
+Plataforma: Linux 6.6.87.2-microsoft-standard-WSL2 x86_64
+CPU logicas disponibles: 16
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Compilacion: C++17 -O2 -Wall -Wextra -fopenmp -pthread
+Comando: make -C simulador/src test

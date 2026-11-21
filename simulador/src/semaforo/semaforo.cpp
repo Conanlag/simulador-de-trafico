@@ -1,61 +1,28 @@
 #include "semaforo.h"
 #include "mapa.h"
+#include <cmath>
 
-// Duracion de cada estado, en ticks de simulacion
-constexpr int GREEN_TICKS  = 18;
-constexpr int YELLOW_TICKS = 4;
-constexpr int RED_TICKS    = 18;
-
-static int ticksFor(LightColor state) {
-    switch (state) {
-        case LightColor::GREEN:  return GREEN_TICKS;
-        case LightColor::YELLOW: return YELLOW_TICKS;
-        case LightColor::RED:    return RED_TICKS;
-    }
-    return GREEN_TICKS;
+int lightTicks(LightColor state, const Config& c) {
+    double seconds = state == LightColor::GREEN ? c.green : state == LightColor::YELLOW ? c.yellow : c.red;
+    return static_cast<int>(std::ceil(seconds * 1000.0 / c.stepMs));
 }
 
-static LightColor nextState(LightColor state) {
-    switch (state) {
-        case LightColor::GREEN:  return LightColor::YELLOW;
-        case LightColor::YELLOW: return LightColor::RED;
-        case LightColor::RED:    return LightColor::GREEN;
-    }
-    return LightColor::GREEN;
-}
-
-std::vector<TrafficLight> createTrafficLights() {
+std::vector<TrafficLight> createTrafficLights(const Config& c) {
     std::vector<TrafficLight> lights;
-    int idx = 0;
-
-    for (int r = 0; r < H; ++r) {
-        if (!isBandCenter(r)) continue;
-        for (int c = 0; c < W; ++c) {
-            if (!isBandCenter(c)) continue;
-
-            TrafficLight light;
-            light.row = r;
-            light.col = c;
-
-            // Se reparten en las 3 fases para que no cambien todos a la vez
-            int phase = idx % 3;
-            light.state = (phase == 0) ? LightColor::GREEN
-                         : (phase == 1) ? LightColor::YELLOW
-                                        : LightColor::RED;
-            light.timer = ticksFor(light.state);
-
-            lights.push_back(light);
-            ++idx;
-        }
+    constexpr int bands = BLOCKS + 1;
+    for (int i = 0; i < c.lights; ++i) {
+        int cross = (2 * i + 1) * bands * bands / (2 * c.lights);
+        auto state = static_cast<LightColor>(i % 3);
+        lights.push_back({cross / bands * PERIOD + STREET_WIDTH / 2,
+                          cross % bands * PERIOD + STREET_WIDTH / 2,
+                          state, lightTicks(state, c)});
     }
     return lights;
 }
 
-void updateTrafficLights(std::vector<TrafficLight>& lights) {
-    for (auto& light : lights) {
-        if (--light.timer <= 0) {
-            light.state = nextState(light.state);
-            light.timer = ticksFor(light.state);
-        }
+void advanceLight(TrafficLight& light, const Config& config) {
+    if (--light.timer <= 0) {
+        light.state = static_cast<LightColor>((static_cast<int>(light.state) + 1) % 3);
+        light.timer = lightTicks(light.state, config);
     }
 }

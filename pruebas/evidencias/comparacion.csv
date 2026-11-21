@@ -1,0 +1,6 @@
+prueba,vehiculos,semaforos,ticks,secuencial_ms,paralelo_ms,aceleracion,promedio_viaje_s,colisiones
+01_minimo,20,10,117,0.556,0.301,1.849,10.237,0
+02_media,100,16,179,1.496,0.542,2.761,13.306,0
+03_maximo,200,20,433,3.217,1.672,1.925,23.878,0
+04_origen_compartido,20,16,98,0.024,0.413,0.059,8.220,0
+05_rojo_largo,40,20,379,0.608,0.572,1.063,24.743,0
