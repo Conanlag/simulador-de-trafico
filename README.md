@@ -117,7 +117,6 @@ La prueba del núcleo verifica sentidos, distancias mínimas conocidas, bordes,
 transiciones de luces y configuración inválida. Después se ejecutan cinco escenarios
 completos y se actualizan sus evidencias de consola y CSV.
 
-- [Reporte técnico](docs/REPORTE_TECNICO.md), con campos de equipo por completar.
-- [Pruebas y validación](docs/PRUEBAS.md).
-- [Evidencias de ejecución](pruebas/evidencias/).
-- [Comparación de rendimiento](pruebas/evidencias/comparacion.csv).
+- [Reporte técnico](documento-tecnico/Documento%20tecnico.pdf)
+- [Pruebas y validación](/pruebas/pruebas%20y%20validacion.pdf).
+- [Código fuente](/simulador/src/).
