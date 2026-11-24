@@ -1,4 +1,0 @@
-OK: pregunta inicial; rechaza texto, 19 y 201; acepta 20 vehiculos.
-OK: se anuncian 20 hilos de vehiculos y 20 de semaforos.
-OK: espacio pausa; flecha derecha avanza un paso; Q devuelve codigo 2.
-OK: tablas finales con pendientes y tiempos en curso; terminal restaurada.
