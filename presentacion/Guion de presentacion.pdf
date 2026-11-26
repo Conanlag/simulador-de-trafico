@@ -1,0 +1,362 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 8 /Kids [ 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R 18 0 R 20 0 R 22 0 R ] >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Length 4800 >>
+stream
+BT /F2 8 Tf 0.18 0.32 0.6 rg 1 0 0 1 48.00 809.00 Tm (SIMULADOR DE TRÁFICO CONCURRENTE) Tj ET
+0.82 0.86 0.92 RG 0.6 w 48 797 m 547 797 l S
+BT /F2 25 Tf 0.09 0.2 0.39 rg 1 0 0 1 48.00 779.00 Tm (Guion de presentación) Tj ET
+BT /F1 11 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 748.00 Tm (16 diapositivas · Demostración · Preguntas de práctica) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 719.00 Tm (Duración estimada: 12 a 14 minutos, incluida la demostración. El guion sigue el orden de) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 704.00 Tm (Presentacion.pdf. Ensayen las ideas para explicarlas con sus propias palabras; los tiempos son) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 689.00 Tm (orientativos.) Tj ET
+BT /F4 9.5 Tf 0.3 0.37 0.43 rg 1 0 0 1 48.00 667.00 Tm (Acción / nota: Antes de presentar: unifiquen las cifras de las diapositivas, el reporte y los CSV para que correspondan) Tj ET
+BT /F4 9.5 Tf 0.3 0.37 0.43 rg 1 0 0 1 48.00 654.00 Tm (a la misma ejecución. El comando de compilación correcto, desde la raíz del proyecto, es make -C simulador/src.) Tj ET
+BT /F2 14 Tf 0.12 0.27 0.51 rg 1 0 0 1 48.00 626.00 Tm (1. Portada) Tj ET
+BT /F2 8 Tf 0.4 0.46 0.53 rg 1 0 0 1 48.00 607.00 Tm (TIEMPO SUGERIDO: 20 segundos) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 589.00 Tm (Buenos días. Somos [nombres] y presentamos nuestro simulador de tráfico concurrente desarrollado en) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 574.00 Tm (C++. El proyecto representa una ciudad donde cada vehículo y cada semáforo tiene su propio hilo.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 559.00 Tm (Vamos a explicar cómo coordinamos esos hilos, cómo evitamos conflictos en las intersecciones y cómo) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 544.00 Tm (calculamos las rutas en paralelo.) Tj ET
+BT /F2 14 Tf 0.12 0.27 0.51 rg 1 0 0 1 48.00 514.00 Tm (2. Introducción y objetivo) Tj ET
+BT /F2 8 Tf 0.4 0.46 0.53 rg 1 0 0 1 48.00 495.00 Tm (TIEMPO SUGERIDO: 35 segundos) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 477.00 Tm (Nuestro objetivo fue simular vehículos que compiten por recursos compartidos, principalmente las celdas) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 462.00 Tm (de las calles y las intersecciones.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 440.00 Tm (El problema aparece cuando dos vehículos revisan un cruce al mismo tiempo: ambos podrían encontrarlo) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 425.00 Tm (libre e intentar ocuparlo. Por eso, comprobar y reservar debe ser una sola operación sincronizada.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 403.00 Tm (También distinguimos el bloqueo entre hilos de un atasco vial. El primero se atiende mediante nuestro) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 388.00 Tm (diseño de sincronización; el segundo sigue siendo una limitación del modelo.) Tj ET
+BT /F2 14 Tf 0.12 0.27 0.51 rg 1 0 0 1 48.00 358.00 Tm (3. Cómo funciona el sistema) Tj ET
+BT /F2 8 Tf 0.4 0.46 0.53 rg 1 0 0 1 48.00 339.00 Tm (TIEMPO SUGERIDO: 30 segundos) Tj ET
+BT /F4 9.5 Tf 0.3 0.37 0.43 rg 1 0 0 1 48.00 321.00 Tm (Acción / nota: Señala los cinco bloques de izquierda a derecha.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 301.00 Tm (Primero leemos y validamos la configuración. Después calculamos las rutas de forma secuencial y) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 286.00 Tm (paralela, y comprobamos que sean idénticas.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 264.00 Tm (Luego creamos los hilos de vehículos y semáforos. Un coordinador avanza el reloj lógico y permite que) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 249.00 Tm (cada hilo actúe una vez por paso.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 227.00 Tm (Al terminar cada paso verificamos la consistencia del estado. Finalmente generamos las tablas de) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 212.00 Tm (resultados y, si se solicita, los archivos CSV.) Tj ET
+BT /F2 14 Tf 0.12 0.27 0.51 rg 1 0 0 1 48.00 182.00 Tm (4. Mapa desarrollado) Tj ET
+BT /F2 8 Tf 0.4 0.46 0.53 rg 1 0 0 1 48.00 163.00 Tm (TIEMPO SUGERIDO: 40 segundos) Tj ET
+BT /F4 9.5 Tf 0.3 0.37 0.43 rg 1 0 0 1 48.00 145.00 Tm (Acción / nota: Señala las flechas de calles y avenidas.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 125.00 Tm (La ciudad tiene doce por doce cuadras. Para delimitar esas cuadras necesitamos trece calles) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 110.00 Tm (horizontales y trece avenidas verticales; por eso tenemos 169 intersecciones.) Tj ET
+BT /F1 7 Tf 0.45 0.49 0.55 rg 1 0 0 1 48.00 30.00 Tm (GUION PARA ENSAYO · PROGRAMACIÓN CONCURRENTE) Tj ET
+BT /F1 8 Tf 0.45 0.49 0.55 rg 1 0 0 1 510.00 30.00 Tm (1 / 8) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 7 0 R >>
+endobj
+9 0 obj
+<< /Length 5261 >>
+stream
+BT /F2 8 Tf 0.18 0.32 0.6 rg 1 0 0 1 48.00 809.00 Tm (SIMULADOR DE TRÁFICO CONCURRENTE) Tj ET
+0.82 0.86 0.92 RG 0.6 w 48 797 m 547 797 l S
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 779.00 Tm (Las calles alternan su sentido: una permite circular hacia la derecha y la siguiente hacia la izquierda.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 764.00 Tm (Las avenidas alternan entre abajo y arriba.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 742.00 Tm (La rejilla completa mide 51 por 51 celdas. Cada cruce tiene un mutex propio. El tamaño del mapa está) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 727.00 Tm (definido mediante constantes de compilación; los parámetros del tráfico sí se pueden cambiar desde un) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 712.00 Tm (archivo.) Tj ET
+BT /F2 14 Tf 0.12 0.27 0.51 rg 1 0 0 1 48.00 682.00 Tm (5. Cómo se representa el tráfico) Tj ET
+BT /F2 8 Tf 0.4 0.46 0.53 rg 1 0 0 1 48.00 663.00 Tm (TIEMPO SUGERIDO: 40 segundos) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 645.00 Tm (Combinamos dos representaciones. Usamos una rejilla para localizar vehículos, consultar ocupaciones y) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 630.00 Tm (reservar celdas. Para calcular rutas usamos un grafo dirigido implícito: cada nodo es una celda del carril) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 615.00 Tm (central y cada arista es un movimiento permitido.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 593.00 Tm (Un vehículo puede estar pendiente de entrada, circulando, esperando o llegado.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 571.00 Tm (Su viaje termina únicamente cuando alcanza su destino interior. Llegar al extremo del mapa no cuenta) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 556.00 Tm (como llegada: la ruta incorpora los giros necesarios para continuar hacia el destino.) Tj ET
+BT /F2 14 Tf 0.12 0.27 0.51 rg 1 0 0 1 48.00 526.00 Tm (6. Módulos del proyecto) Tj ET
+BT /F2 8 Tf 0.4 0.46 0.53 rg 1 0 0 1 48.00 507.00 Tm (TIEMPO SUGERIDO: 25 segundos) Tj ET
+BT /F4 9.5 Tf 0.3 0.37 0.43 rg 1 0 0 1 48.00 489.00 Tm (Acción / nota: Señala los módulos principales; evita leer todos los recuadros.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 469.00 Tm (El código está separado por responsabilidades. Configuración valida los parámetros; mapa define las) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 454.00 Tm (calles; rutas calcula los caminos; y simulación concentra los hilos, las reservas y las métricas.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 432.00 Tm (Render dibuja una copia del estado e input interpreta los controles.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 410.00 Tm (Aunque existe un módulo llamado car, la lógica de movimiento está en simulación. Car contiene la) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 395.00 Tm (información necesaria para representar visualmente al vehículo.) Tj ET
+BT /F2 14 Tf 0.12 0.27 0.51 rg 1 0 0 1 48.00 365.00 Tm (7. Concurrencia: qué hilos hay) Tj ET
+BT /F2 8 Tf 0.4 0.46 0.53 rg 1 0 0 1 48.00 346.00 Tm (TIEMPO SUGERIDO: 55 segundos) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 328.00 Tm (Tenemos un hilo por vehículo y uno por semáforo, además del hilo principal que coordina la ejecución.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 306.00 Tm (Cada paso tiene dos fases. Primero actualizamos los semáforos y esperamos a que todos terminen.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 291.00 Tm (Después activamos los vehículos y esperamos sus movimientos. Al finalizar verificamos el estado.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 269.00 Tm (Estas esperas se implementan con una variable de condición, que libera el monitor mientras el hilo) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 254.00 Tm (duerme. Así evitamos mantener al procesador revisando continuamente si ya puede continuar.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 232.00 Tm (Los semáforos tienen hilos propios, pero sus temporizadores avanzan con el reloj simulado. OpenMP) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 217.00 Tm (participa antes de esta etapa, durante la planificación de rutas.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 195.00 Tm (Los vehículos son concurrentes; sus actualizaciones del estado se serializan mediante el monitor.) Tj ET
+BT /F2 14 Tf 0.12 0.27 0.51 rg 1 0 0 1 48.00 165.00 Tm (8. Sincronización y prevención de conflictos) Tj ET
+BT /F2 8 Tf 0.4 0.46 0.53 rg 1 0 0 1 48.00 146.00 Tm (TIEMPO SUGERIDO: 70 segundos) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 128.00 Tm (Usamos tres mecanismos con funciones distintas. El monitor protege el estado compartido: ocupaciones,) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 113.00 Tm (reservas, luces y métricas. El mutex de cada cruce mantiene su propiedad exclusiva durante varios) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 98.00 Tm (pasos. La variable de condición coordina cuándo actúan los trabajadores.) Tj ET
+BT /F1 7 Tf 0.45 0.49 0.55 rg 1 0 0 1 48.00 30.00 Tm (GUION PARA ENSAYO · PROGRAMACIÓN CONCURRENTE) Tj ET
+BT /F1 8 Tf 0.45 0.49 0.55 rg 1 0 0 1 510.00 30.00 Tm (2 / 8) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 9 0 R >>
+endobj
+11 0 obj
+<< /Length 3060 >>
+stream
+BT /F2 8 Tf 0.18 0.32 0.6 rg 1 0 0 1 48.00 809.00 Tm (SIMULADOR DE TRÁFICO CONCURRENTE) Tj ET
+0.82 0.86 0.92 RG 0.6 w 48 797 m 547 797 l S
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 779.00 Tm (Antes de entrar, el vehículo comprueba la luz y reserva todo su recorrido por el cruce, incluyendo la) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 764.00 Tm (primera celda de salida.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 742.00 Tm (Por ejemplo, si dos autos quieren entrar juntos, uno realiza primero la comprobación y la reserva bajo el) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 727.00 Tm (monitor. Cuando el segundo consulta, encuentra el recurso ocupado y espera.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 705.00 Tm (Para evitar bloqueos entre mutex, usamos try_lock y ningún vehículo solicita otro cruce mientras) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 690.00 Tm (conserva el anterior. Una vez dentro, tiene reservado el espacio para completar la maniobra.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 668.00 Tm (Esto no descarta un atasco circular en las calles. El límite de pasos permite reportarlo como ejecución) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 653.00 Tm (incompleta.) Tj ET
+BT /F2 14 Tf 0.12 0.27 0.51 rg 1 0 0 1 48.00 623.00 Tm (9. BFS y paralelismo con OpenMP) Tj ET
+BT /F2 8 Tf 0.4 0.46 0.53 rg 1 0 0 1 48.00 604.00 Tm (TIEMPO SUGERIDO: 70 segundos) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 586.00 Tm (Elegimos BFS porque todos los movimientos cuestan un paso. El algoritmo explora primero las celdas a) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 571.00 Tm (una distancia de un movimiento, después las de dos, y así sucesivamente.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 549.00 Tm (Guarda el predecesor de cada celda y reconstruye el camino cuando encuentra el destino. Por eso) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 534.00 Tm (obtiene una ruta con la menor cantidad de movimientos permitidos. Su complejidad es O de V más E.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 512.00 Tm (Para paralelizar distribuimos las búsquedas de distintos vehículos entre los hilos de OpenMP. Cada) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 497.00 Tm (búsqueda tiene su propia cola y arreglo de predecesores, y escribe en una posición distinta del) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 482.00 Tm (resultado.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 460.00 Tm (Medimos ambas modalidades sobre los mismos viajes y verificamos que las rutas coincidan.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 438.00 Tm (La ruta mínima se refiere a distancia: no garantiza el menor tiempo con tráfico, porque actualmente no) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 423.00 Tm (recalculamos por congestión.) Tj ET
+BT /F1 7 Tf 0.45 0.49 0.55 rg 1 0 0 1 48.00 30.00 Tm (GUION PARA ENSAYO · PROGRAMACIÓN CONCURRENTE) Tj ET
+BT /F1 8 Tf 0.45 0.49 0.55 rg 1 0 0 1 510.00 30.00 Tm (3 / 8) Tj ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 11 0 R >>
+endobj
+13 0 obj
+<< /Length 4784 >>
+stream
+BT /F2 8 Tf 0.18 0.32 0.6 rg 1 0 0 1 48.00 809.00 Tm (SIMULADOR DE TRÁFICO CONCURRENTE) Tj ET
+0.82 0.86 0.92 RG 0.6 w 48 797 m 547 797 l S
+BT /F2 14 Tf 0.12 0.27 0.51 rg 1 0 0 1 48.00 771.00 Tm (10. Ejecución y parámetros) Tj ET
+BT /F2 8 Tf 0.4 0.46 0.53 rg 1 0 0 1 48.00 752.00 Tm (TIEMPO SUGERIDO: 2 minutos con demostración) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 734.00 Tm (Podemos configurar la cantidad de vehículos, los semáforos, las duraciones de las luces y los hilos) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 719.00 Tm (utilizados para planificar.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 697.00 Tm (Hay dos parámetros diferentes: step_ms indica cuánto tiempo simulado representa cada paso; frame_ms) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 682.00 Tm (controla la velocidad de visualización. Ahora vamos a mostrar el sistema funcionando.) Tj ET
+BT /F4 9.5 Tf 0.3 0.37 0.43 rg 1 0 0 1 48.00 660.00 Tm (Acción / nota: Desde la raíz del proyecto, inicia la ejecución interactiva:) Tj ET
+BT /F3 8.5 Tf 0.12 0.26 0.45 rg 1 0 0 1 48.00 640.00 Tm (./simulador/src/calles --config simulador/config/default.conf) Tj ET
+BT /F4 9.5 Tf 0.3 0.37 0.43 rg 1 0 0 1 48.00 621.00 Tm (Acción / nota: Cuando pregunte la cantidad de vehículos, escribe 20.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 601.00 Tm (Estamos ejecutando veinte vehículos, cada uno con su hilo. Podemos observar cómo avanzan y esperan) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 586.00 Tm (para acceder a los cruces.) Tj ET
+BT /F4 9.5 Tf 0.3 0.37 0.43 rg 1 0 0 1 48.00 564.00 Tm (Acción / nota: Presiona espacio.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 544.00 Tm (Al pausar, se detiene el reloj simulado, incluyendo los semáforos.) Tj ET
+BT /F4 9.5 Tf 0.3 0.37 0.43 rg 1 0 0 1 48.00 522.00 Tm (Acción / nota: Presiona una flecha.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 502.00 Tm (Con una flecha avanzamos exactamente un paso para observar los movimientos.) Tj ET
+BT /F4 9.5 Tf 0.3 0.37 0.43 rg 1 0 0 1 48.00 480.00 Tm (Acción / nota: Presiona Q.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 460.00 Tm (Esta salida fue manual, por eso el reporte identifica la simulación como incompleta y conserva los) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 445.00 Tm (vehículos pendientes.) Tj ET
+BT /F4 9.5 Tf 0.3 0.37 0.43 rg 1 0 0 1 48.00 423.00 Tm (Acción / nota: Ejecuta una corrida completa sin animación. El siguiente comando es una sola línea:) Tj ET
+BT /F3 8.5 Tf 0.12 0.26 0.45 rg 1 0 0 1 48.00 403.00 Tm (./simulador/src/calles --headless --config pruebas/configs/01_minimo.conf --output /tmp/demo) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 384.00 Tm (Este modo conserva las mismas reglas y los mismos hilos, pero elimina la espera visual. Al terminar) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 369.00 Tm (podemos revisar las llegadas, las esperas, la congestión y los tiempos de BFS. También exportamos dos) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 354.00 Tm (archivos CSV.) Tj ET
+BT /F4 9.5 Tf 0.3 0.37 0.43 rg 1 0 0 1 48.00 332.00 Tm (Acción / nota: Señala una métrica en la salida real. No leas las tablas completas.) Tj ET
+BT /F2 14 Tf 0.12 0.27 0.51 rg 1 0 0 1 48.00 304.00 Tm (11. Resultados de los cinco escenarios) Tj ET
+BT /F2 8 Tf 0.4 0.46 0.53 rg 1 0 0 1 48.00 285.00 Tm (TIEMPO SUGERIDO: 35 segundos) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 267.00 Tm (Evaluamos cinco escenarios: carga mínima, intermedia, máxima, origen compartido y rojo prolongado.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 245.00 Tm (En conjunto completaron 380 viajes, sin colisiones detectadas. Cada fila representa una ejecución) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 230.00 Tm (individual.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 208.00 Tm (El viaje promedio indica cuánto tarda un vehículo desde el inicio común, incluyendo su espera para) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 193.00 Tm (entrar. La duración corresponde al momento de la última llegada.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 171.00 Tm (Las verificaciones revisan estados de vehículos activos; no equivalen al número de pasos del reloj.) Tj ET
+BT /F2 14 Tf 0.12 0.27 0.51 rg 1 0 0 1 48.00 141.00 Tm (12. Carga, esperas y aceleración) Tj ET
+BT /F2 8 Tf 0.4 0.46 0.53 rg 1 0 0 1 48.00 122.00 Tm (TIEMPO SUGERIDO: 45 segundos) Tj ET
+BT /F4 9.5 Tf 0.3 0.37 0.43 rg 1 0 0 1 48.00 104.00 Tm (Acción / nota: Señala primero las barras y después los valores de aceleración.) Tj ET
+BT /F1 7 Tf 0.45 0.49 0.55 rg 1 0 0 1 48.00 30.00 Tm (GUION PARA ENSAYO · PROGRAMACIÓN CONCURRENTE) Tj ET
+BT /F1 8 Tf 0.45 0.49 0.55 rg 1 0 0 1 510.00 30.00 Tm (4 / 8) Tj ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 13 0 R >>
+endobj
+15 0 obj
+<< /Length 5101 >>
+stream
+BT /F2 8 Tf 0.18 0.32 0.6 rg 1 0 0 1 48.00 809.00 Tm (SIMULADOR DE TRÁFICO CONCURRENTE) Tj ET
+0.82 0.86 0.92 RG 0.6 w 48 797 m 547 797 l S
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 779.00 Tm (Las barras muestran que el tiempo de viaje depende de varios factores. En estas ejecuciones, la carga) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 764.00 Tm (máxima y el rojo prolongado presentaron viajes medios mayores. Como también cambian los recorridos y) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 749.00 Tm (las configuraciones, no podemos atribuir toda la diferencia solamente al número de autos.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 727.00 Tm (Abajo mostramos la aceleración de BFS: tiempo secuencial dividido entre tiempo paralelo. Un valor mayor) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 712.00 Tm (que uno favorece al paralelo.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 690.00 Tm (En cuatro escenarios OpenMP fue más rápido. En el origen compartido, las rutas son cortas e iguales y) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 675.00 Tm (el costo de coordinación puede superar el ahorro. Tener más hilos no garantiza terminar antes.) Tj ET
+BT /F2 14 Tf 0.12 0.27 0.51 rg 1 0 0 1 48.00 645.00 Tm (13. Evidencia real de ejecución) Tj ET
+BT /F2 8 Tf 0.4 0.46 0.53 rg 1 0 0 1 48.00 626.00 Tm (TIEMPO SUGERIDO: 35 segundos) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 608.00 Tm (Aquí vemos cómo se interpretan los reportes. Primero comprobamos que el estado sea completo y que) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 593.00 Tm (hayan llegado todos los vehículos.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 571.00 Tm (Después revisamos las colisiones detectadas y las verificaciones realizadas.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 549.00 Tm (En la congestión distinguimos la espera final del máximo observado. Una cola final de cero significa que) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 534.00 Tm (ya terminaron los viajes; no significa que el cruce nunca estuvo congestionado.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 512.00 Tm (El máximo conserva esa información y permite identificar los puntos donde se acumularon más vehículos.) Tj ET
+BT /F4 9.5 Tf 0.3 0.37 0.43 rg 1 0 0 1 48.00 490.00 Tm (Acción / nota: El porcentaje cercano al 87 % mencionado en la lámina corresponde a un vehículo concreto, no al) Tj ET
+BT /F4 9.5 Tf 0.3 0.37 0.43 rg 1 0 0 1 48.00 477.00 Tm (promedio del escenario.) Tj ET
+BT /F2 14 Tf 0.12 0.27 0.51 rg 1 0 0 1 48.00 449.00 Tm (14. Qué significan los resultados) Tj ET
+BT /F2 8 Tf 0.4 0.46 0.53 rg 1 0 0 1 48.00 430.00 Tm (TIEMPO SUGERIDO: 40 segundos) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 412.00 Tm (Interpretamos los resultados desde tres perspectivas.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 390.00 Tm (En seguridad, las ejecuciones registradas terminaron sin colisiones detectadas. Esto respalda el) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 375.00 Tm (comportamiento observado, aunque no demuestra todos los posibles órdenes de ejecución.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 353.00 Tm (En tráfico, el origen compartido muestra cómo se administra un acceso donde muchos autos compiten por) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 338.00 Tm (entrar, mientras que el rojo prolongado permite observar esperas por luces.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 316.00 Tm (En rendimiento, OpenMP benefició varias cargas, pero perjudicó la de rutas cortas. Esa mejora) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 301.00 Tm (corresponde a la planificación de rutas; no debe interpretarse como una aceleración equivalente de toda) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 286.00 Tm (la simulación.) Tj ET
+BT /F2 14 Tf 0.12 0.27 0.51 rg 1 0 0 1 48.00 256.00 Tm (15. Aprendizajes clave) Tj ET
+BT /F2 8 Tf 0.4 0.46 0.53 rg 1 0 0 1 48.00 237.00 Tm (TIEMPO SUGERIDO: 30 segundos) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 219.00 Tm (El aprendizaje principal fue distinguir concurrencia y paralelismo. Los hilos representan actores que) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 204.00 Tm (comparten recursos, mientras que OpenMP distribuye cálculos independientes.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 182.00 Tm (También aprendimos que un mutex por sí solo no resuelve todo: necesitamos definir qué protege, cuándo) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 167.00 Tm (se adquiere y cuándo se libera.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 145.00 Tm (Finalmente, medir y verificar fue tan necesario como implementar. Comparamos rutas idénticas, revisamos) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 130.00 Tm (la consistencia en cada paso y conservamos evidencias para explicar los resultados.) Tj ET
+BT /F1 7 Tf 0.45 0.49 0.55 rg 1 0 0 1 48.00 30.00 Tm (GUION PARA ENSAYO · PROGRAMACIÓN CONCURRENTE) Tj ET
+BT /F1 8 Tf 0.45 0.49 0.55 rg 1 0 0 1 510.00 30.00 Tm (5 / 8) Tj ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 15 0 R >>
+endobj
+17 0 obj
+<< /Length 1454 >>
+stream
+BT /F2 8 Tf 0.18 0.32 0.6 rg 1 0 0 1 48.00 809.00 Tm (SIMULADOR DE TRÁFICO CONCURRENTE) Tj ET
+0.82 0.86 0.92 RG 0.6 w 48 797 m 547 797 l S
+BT /F2 14 Tf 0.12 0.27 0.51 rg 1 0 0 1 48.00 771.00 Tm (16. Conclusiones y mejoras futuras) Tj ET
+BT /F2 8 Tf 0.4 0.46 0.53 rg 1 0 0 1 48.00 752.00 Tm (TIEMPO SUGERIDO: 30 segundos) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 734.00 Tm (Cumplimos el objetivo de modelar vehículos y semáforos como hilos, proteger las intersecciones y) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 719.00 Tm (comparar la planificación secuencial y paralela.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 697.00 Tm (Las pruebas documentadas completaron los viajes sin colisiones detectadas, y las métricas permitieron) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 682.00 Tm (observar esperas, congestión y rendimiento.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 660.00 Tm (Como mejoras proponemos controlar atascos circulares, recalcular rutas ante congestión, reducir el) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 645.00 Tm (alcance del monitor y medir múltiples repeticiones.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 623.00 Tm (Gracias. Podemos mostrar el código o responder sus preguntas.) Tj ET
+BT /F1 7 Tf 0.45 0.49 0.55 rg 1 0 0 1 48.00 30.00 Tm (GUION PARA ENSAYO · PROGRAMACIÓN CONCURRENTE) Tj ET
+BT /F1 8 Tf 0.45 0.49 0.55 rg 1 0 0 1 510.00 30.00 Tm (6 / 8) Tj ET
+endstream
+endobj
+18 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 17 0 R >>
+endobj
+19 0 obj
+<< /Length 2884 >>
+stream
+BT /F2 8 Tf 0.18 0.32 0.6 rg 1 0 0 1 48.00 809.00 Tm (SIMULADOR DE TRÁFICO CONCURRENTE) Tj ET
+0.82 0.86 0.92 RG 0.6 w 48 797 m 547 797 l S
+BT /F2 14 Tf 0.12 0.27 0.51 rg 1 0 0 1 48.00 771.00 Tm (Reparto sugerido del equipo) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 749.00 Tm (Primer integrante: diapositivas 1 a 6. Problema, ciudad y organización del proyecto.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 727.00 Tm (Segundo integrante: diapositivas 7 a 10. Hilos, sincronización, BFS y demostración.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 705.00 Tm (Tercer integrante: diapositivas 11 a 16. Resultados, interpretación y conclusiones.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 683.00 Tm (Todos deben poder responder sobre hilos, sincronización y BFS, aunque presenten otro bloque.) Tj ET
+BT /F2 14 Tf 0.12 0.27 0.51 rg 1 0 0 1 48.00 653.00 Tm (Relación con la rúbrica) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 631.00 Tm (Estructura y organización del reporte \(20 puntos\): el documento técnico es el entregable que acredita) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 616.00 Tm (este criterio; el guion mantiene el orden de objetivo, problema, modelo, resultados y conclusiones.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 594.00 Tm (Modelado de la ciudad \(5 puntos\): diapositivas 4 y 5; explicar la rejilla, el grafo dirigido y los giros) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 579.00 Tm (permitidos.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 557.00 Tm (Vehículos, semáforos y control \(15 puntos\): diapositivas 5, 7, 8 y demostración en la 10.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 535.00 Tm (Sincronización y seguridad \(10 puntos\): diapositivas 7 y 8; justificar regiones críticas, exclusión) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 520.00 Tm (mutua y prevención de bloqueos entre mutex.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 498.00 Tm (Rutas y programación paralela \(10 puntos\): diapositiva 9; explicar BFS, OpenMP y la validación de) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 483.00 Tm (rutas idénticas.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 461.00 Tm (Monitoreo y resultados \(10 puntos\): diapositivas 11 a 14; interpretar tiempos, esperas, congestión y) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 446.00 Tm (aceleración.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 424.00 Tm (Presentación oral y dominio \(30 puntos\): demostrar el sistema, explicar parámetros y responder sin leer.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 409.00 Tm (Ensayar con cronómetro para respetar los 10 a 15 minutos.) Tj ET
+BT /F1 7 Tf 0.45 0.49 0.55 rg 1 0 0 1 48.00 30.00 Tm (GUION PARA ENSAYO · PROGRAMACIÓN CONCURRENTE) Tj ET
+BT /F1 8 Tf 0.45 0.49 0.55 rg 1 0 0 1 510.00 30.00 Tm (7 / 8) Tj ET
+endstream
+endobj
+20 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 19 0 R >>
+endobj
+21 0 obj
+<< /Length 3589 >>
+stream
+BT /F2 8 Tf 0.18 0.32 0.6 rg 1 0 0 1 48.00 809.00 Tm (SIMULADOR DE TRÁFICO CONCURRENTE) Tj ET
+0.82 0.86 0.92 RG 0.6 w 48 797 m 547 797 l S
+BT /F2 14 Tf 0.12 0.27 0.51 rg 1 0 0 1 48.00 771.00 Tm (Preguntas que conviene practicar) Tj ET
+BT /F2 11 Tf 0.12 0.27 0.51 rg 1 0 0 1 48.00 749.00 Tm (¿Por qué BFS y no Dijkstra?) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 734.00 Tm (Todos los movimientos cuestan lo mismo; BFS ya obtiene el camino mínimo con una implementación más) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 719.00 Tm (sencilla.) Tj ET
+BT /F2 11 Tf 0.12 0.27 0.51 rg 1 0 0 1 48.00 697.00 Tm (¿Por qué usan monitor y mutex por cruce?) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 682.00 Tm (El monitor protege operaciones sobre el estado compartido; el mutex del cruce mantiene su propiedad) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 667.00 Tm (exclusiva entre pasos.) Tj ET
+BT /F2 11 Tf 0.12 0.27 0.51 rg 1 0 0 1 48.00 645.00 Tm (¿Qué pasa si dos autos quieren entrar juntos?) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 630.00 Tm (Uno reserva primero bajo el monitor; el segundo encuentra el recurso ocupado y espera.) Tj ET
+BT /F2 11 Tf 0.12 0.27 0.51 rg 1 0 0 1 48.00 608.00 Tm (¿Dónde ocurre el paralelismo?) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 593.00 Tm (En el cálculo de rutas de distintos vehículos mediante OpenMP.) Tj ET
+BT /F2 11 Tf 0.12 0.27 0.51 rg 1 0 0 1 48.00 571.00 Tm (¿Por qué el paralelo puede ser más lento?) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 556.00 Tm (Distribuir y sincronizar trabajo tiene un costo que puede superar el ahorro cuando las búsquedas son) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 541.00 Tm (pequeñas.) Tj ET
+BT /F2 11 Tf 0.12 0.27 0.51 rg 1 0 0 1 48.00 519.00 Tm (¿Garantizan que nunca habrá un atasco?) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 504.00 Tm (No. Evitamos la espera circular entre mutex de cruces, pero no descartamos atascos circulares en las) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 489.00 Tm (calles.) Tj ET
+BT /F2 11 Tf 0.12 0.27 0.51 rg 1 0 0 1 48.00 467.00 Tm (¿Cero colisiones demuestra ausencia de carreras?) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 452.00 Tm (Es evidencia experimental; el argumento de seguridad también depende de cómo protegemos el estado) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 437.00 Tm (compartido.) Tj ET
+BT /F2 11 Tf 0.12 0.27 0.51 rg 1 0 0 1 48.00 415.00 Tm (¿La misma semilla produce exactamente los mismos tiempos?) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 400.00 Tm (Fija los viajes, pero el orden de ejecución de los hilos puede cambiar las esperas y las llegadas.) Tj ET
+BT /F2 14 Tf 0.12 0.27 0.51 rg 1 0 0 1 48.00 370.00 Tm (Preparación de la demostración) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 348.00 Tm (Compilen antes de exponer y prueben la terminal con el tamaño de letra que usarán en el proyector.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 333.00 Tm (Tengan preparados los dos comandos de la diapositiva 10 y una salida completa de respaldo.) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 311.00 Tm (No presenten una salida con Q como una simulación completa. Distingan siempre segundos simulados,) Tj ET
+BT /F1 10.8 Tf 0.12 0.15 0.2 rg 1 0 0 1 48.00 296.00 Tm (tiempo real de ejecución y milisegundos del cálculo de rutas.) Tj ET
+BT /F1 7 Tf 0.45 0.49 0.55 rg 1 0 0 1 48.00 30.00 Tm (GUION PARA ENSAYO · PROGRAMACIÓN CONCURRENTE) Tj ET
+BT /F1 8 Tf 0.45 0.49 0.55 rg 1 0 0 1 510.00 30.00 Tm (8 / 8) Tj ET
+endstream
+endobj
+22 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 21 0 R >>
+endobj
+xref
+0 23
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000172 00000 n 
+0000000269 00000 n 
+0000000371 00000 n 
+0000000466 00000 n 
+0000000571 00000 n 
+0000005422 00000 n 
+0000005584 00000 n 
+0000010896 00000 n 
+0000011059 00000 n 
+0000014171 00000 n 
+0000014335 00000 n 
+0000019171 00000 n 
+0000019335 00000 n 
+0000024488 00000 n 
+0000024652 00000 n 
+0000026158 00000 n 
+0000026322 00000 n 
+0000029258 00000 n 
+0000029422 00000 n 
+0000033063 00000 n 
+trailer
+<< /Size 23 /Root 1 0 R >>
+startxref
+33227
+%%EOF
